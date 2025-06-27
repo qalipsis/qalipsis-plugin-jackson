@@ -109,7 +109,7 @@ internal class CsvReaderStepSpecificationConverter : StepSpecificationConverter<
     @KTestable
     private fun createMapper() = CsvMapper().also { mapper ->
         mapper.findAndRegisterModules()
-        mapper.registerModule(KotlinModule())
+        mapper.registerModule(KotlinModule.Builder().build())
         mapper.registerModule(BeanIntrospectionModule())
     }
 
